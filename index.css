@@ -606,10 +606,18 @@ border-radius: 6px;
       padding-top: 3px;
     }
     #prodetails .single-pro-details h4{
-      padding: 40px 0 20px 0;
+      padding: 0px 0 2px 0;
+      color: #000;
+      font-size: 20px;
+    }
+    #prodetails .single-pro-details span{
+      color: #ac1821;
+      font-weight: 600;
+      font-size: 20px;
     }
     #prodetails .single-pro-details h2{
       font-size: 26px;
+      color: red;
     }
     #prodetails .single-pro-details select{
       display:block ;
