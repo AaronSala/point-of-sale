@@ -50,9 +50,9 @@
         </div>
         <div class="single-pro-details">
             
-            <h4 class="namee">family </h4>
-            <span>collection</span>
-            <h2 id= "price" class="price">$34.00</h2>
+            <h4 id="name2" class="name2">Family </h4>
+            <span id="detail1" class="detail">collection</span>
+            <h2 id= "price" class="price">34.00</h2>
             <select>
                 <option>Select Size</option>
                 <option>XL</option>
@@ -60,7 +60,7 @@
                 <option>Small</option>
                 <option>Large</option>
             </select>
-            <input type="number" value="1" class="number">
+            <input type="number" value="1" id="number">
             <button class="normal">Add To Cart</button>
             <h4><span>more details about item</span> <br/>
             stylus family collection 
@@ -75,8 +75,8 @@
                 <div class="pro">
                     <img src="images/shirt.jpeg" class="small-img">
                  <div class="des">
-                    <span >Shirt</span>
-                    <h5 class="name1">Addidas</h5>
+                    <span class="name1">Shirt</span>
+                    <h5 class="mak">Addidas</h5>
                    
                     <h4 class="price1">54</h4>
                  </div>
@@ -86,9 +86,9 @@
                     <img src="images/men1.jpeg" class="small-img">
                  <div class="des">
                     <span class="name1">Collection</span>
-                    <h5 class="">Geans</h5>
+                    <h5 class="mak">Geans</h5>
                     
-                    <h4 class="price1">$24</h4>
+                    <h4 class="price1">24</h4>
                  </div>
                  <a href="">Add to cart</a>
                 </div>
@@ -97,9 +97,9 @@
                  <div class="des">
                     <span class="name1">children
                     </span>
-                    <h5>indian design</h5>
+                    <h5 class="makes">indian design</h5>
                    
-                    <h4 class="price1">$44</h4>
+                    <h4 class="price1">44</h4>
                  </div>
                  <a href="">Add to cart</a>
                 </div>
@@ -107,9 +107,9 @@
                     <img src="images/jacket.jpeg" class="small-img">
                  <div class="des">
                     <span class="name1">jackets</span>
-                    <h5>Addidas</h5>
+                    <h5 class="make">Addidas</h5>
                    
-                    <h4 class="price1">$14</h4>
+                    <h4 class="price1">14</h4>
                  </div>
                  
                 
@@ -185,11 +185,23 @@
     </footer>
 <script>
     var mainImage=document.getElementById('mainImg');
-    var namee=document.getElementsByClassName('namee');
+   
     var smallimg = document.getElementsByClassName('small-img');
-    var name1= document.getElementsByClassName('name1');
-    var price1= document.getElementsByClassName('price1');
-   var number=document.getElementsByClassName('number');
+    var mak= document.getElementsByClassName('mak');
+    var price1= document.querySelectorAll('.price1');
+   var number=document.getElementById('number');
+   var name1=document.getElementsByClassName('name1')
+   var detail = document.getElementsByClassName('detail');
+
+    function  totals(){
+    
+        
+    //itemPrice= price1.innerHTML;
+ 
+        
+       
+    }
+       
 
 
     smallimg[0].onclick=function() {
@@ -205,26 +217,59 @@
     smallimg[3].onclick=function() {
         mainImage.src=smallimg[3].src;
     }
+    number.addEventListener('input',totals=()=>{
+        items=number.value;
+        
+        total=itemPrice*items;
+        
+      price.innerHTML='$'+ total;
+       
+       })
     smallimg[4].onclick=function() {
+        //totals();
+       
+        itemPrice= price1[0].innerHTML;
+       totals ();
+        originalPrice=price.innerHTML;
+        detail1.innerHTML= mak[0].innerHTML;
+        price.innerHTML= '$' + price1[0].innerHTML;
+        name2.innerHTML=name1[0].innerHTML;
         mainImage.src=smallimg[4].src;
-        namee.innerHTML = name1[0].innerHTML;
-        price.innerHTML = price1[0].innerHTML;
+       
+    }
+       
+    
+    
+    smallimg[5].onclick=function() {
+       
+        itemPrice= price1[1].innerHTML;
+       totals ();
+        mainImage.src=smallimg[5].src;
+        price.innerHTML = '$' + price1[1].innerHTML;
+        name2.innerHTML=name1[1].innerHTML;
+       detail1.innerHTML= mak[1].innerHTML;
+       price.innerHTML='$'+ total;
         
     }
-    smallimg[5].onclick=function() {
-        mainImage.src=smallimg[5].src;
-        price.innerHTML = price1[1].innerHTML;
-        namee.innerHTML = name1[1].innerHTML;
-    }
     smallimg[6].onclick=function() {
+       
+        itemPrice= price1[2].innerHTML;
+       totals ();
         mainImage.src=smallimg[6].src;
-        price.innerHTML = price1[2].innerHTML;
-        name.innerHTML = name1[2].innerHTML;
+        price.innerHTML = '$' + price1[2].innerHTML;
+        name2.innerHTML=name1[2].innerHTML;
+       detail1.innerHTML= mak[2].innerHTML;
+       price.innerHTML='$'+ total;
     }
     smallimg[7].onclick=function() {
+        
+        itemPrice= price1[3].innerHTML;
+       totals ();
         mainImage.src=smallimg[7].src;
-        price.innerHTML = price1[3].innerHTML;
-        name.innerHTML = name1[3].innerHTML;
+        price.innerHTML = '$' + price1[3].innerHTML;
+        name2.innerHTML=name1[3].innerHTML;
+       detail1.innerHTML= mak[3].innerHTML;
+       price.innerHTML='$'+ total;
     }
 
 </script>
